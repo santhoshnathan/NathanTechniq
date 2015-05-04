@@ -1,0 +1,11 @@
+<% content_for :head do %>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<title><%= @title %></title>
+<% end %>
+
+<div class="container">
+<%= form_for :url => {:action => 'login'} do |f| %>
+	<div class="g-recaptcha" data-sitekey="6Ld5MwYTAAAAAPOleEEx830767c8gME_3-kJEOCa"></div>
+	<%= f.submit :class => "btn btn-primary"%>
+<% end %>
+</div>

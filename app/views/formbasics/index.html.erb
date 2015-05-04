@@ -1,0 +1,44 @@
+<% content_for :head do %>
+<title><%= @title %></title>
+<% end %>
+
+<% content_for :script do %>
+<script>
+
+</script>
+<% end %>
+
+<div class="container">
+	<div class="panel panel-default margin-top-10">
+		<div class="panel-heading">
+			<h3 class="panel-title"><%= @WelcomeMsg %></h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div role="tabpanel" class="remove-dottedbordere">
+					<div class="col-lg-3 col-sm-3 col-xs-3">
+						<ul class="nav nav-pills nav-stacked" role="tablist">
+							<% @FormtagMethods.each do |getMethod| %>
+							<li role="presentation" class="<% if getMethod == "form_tag" %><%= 'active' %><% end %>">
+								<a href="#<%= getMethod %>" aria-controls="<%= getMethod %>" role="tab" data-toggle="tab">
+									<%= getMethod %>
+								</a>
+							</li>
+							<% end %>
+						</ul>
+					</div>
+
+					<div class="col-lg-9 col-sm-9 col-xs-9">
+						<div class="tab-content">
+							<% @FormtagMethods.each do |getMethod| %>
+							<div role="tabpanel" class="tab-pane <% if getMethod == "form_tag" %><%= 'active' %><% end %>" id="<%= getMethod %>">
+								<%= render partial: getMethod %>
+							</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

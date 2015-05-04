@@ -1,0 +1,24 @@
+<p class="desc-title">form_tag</p>
+<p class="description">
+	Provides a number of methods for creating form tags that don't rely on an <span class="mark-1"> Active Record object assigned to the template like FormHelper does </span>. Instead, you provide the names and values manually. <br /><br />
+	NOTE: The HTML options disabled, readonly, and multiple can all be treated as booleans. So specifying disabled: true will give disabled="disabled".
+	<%= link_to "Form_tag Help", "http://guides.rubyonrails.org/form_helpers.html", target: "_blank" %>
+</p>
+
+<h5 class="title">01 Form tag with Emplty form</h5>
+	<%= form_tag do %>
+		<p>Empty Form</p>
+	<% end %>
+<br />
+
+<h5 class="title">02 Form tag with Action</h5>
+	<%= form_tag("/sample_page", method: "get") do %>
+		<p>Form with Action</p>
+	<% end %>
+<br />
+
+<h5 class="title">03 Form with Helper Methods</h5>
+	<%= form_tag("/sample_page", method: "post") do %>
+	<% end %>
+<br />
+

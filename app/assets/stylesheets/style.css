@@ -1,0 +1,37 @@
+.btn-size-lg {
+	/*width: 70px !important;*/
+}
+
+
+.margin-bottom-10 {
+	margin-bottom: 10px;
+}
+.margin-top-10 {
+	margin-top: 10px;
+}
+.margin-right-10 {
+	margin-top: 10px;
+}
+.margin-left-10 {
+	margin-top: 10px;
+}
+
+.title {
+	color: #005DAF;
+	font-weight: bold;
+}
+
+.desc-title {
+	color: #740000;
+	font-weight: bold;
+}
+
+.remove-dottedbordere a:focus {
+    border: medium none;
+    outline: medium none;
+}
+
+.mark-1 {
+	/*color: #5F0376;*/
+	font-weight: bold;
+}

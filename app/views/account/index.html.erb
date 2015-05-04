@@ -1,0 +1,47 @@
+<% content_for :head do %>
+<title><%= @title %></title>
+<% end %>
+
+<div class="container">
+	<div class="panel panel-default margin-top-10">
+		<div class="panel-heading">
+			<h3 class="panel-title"><%= @WelcomeMsg %></h3>
+		</div>
+		<div class="panel-body">
+			<div class="row">
+				<div class="col-lg-4 col-sm-6 col-xs-12">
+					<div class="list-group">
+						<%= link_to "Form Tag", {:controller => "formbasics", :action => "index"} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6 col-xs-12">
+					<div class="list-group">
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+					</div>
+				</div>
+
+				<div class="col-lg-4 col-sm-6 col-xs-12">
+					<div class="list-group">
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+						<%= link_to "Not Implemented", {} , class: "list-group-item" %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
