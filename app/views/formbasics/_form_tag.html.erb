@@ -1,24 +1,75 @@
 <p class="desc-title">form_tag</p>
 <p class="description">
-	Provides a number of methods for creating form tags that don't rely on an <span class="mark-1"> Active Record object assigned to the template like FormHelper does </span>. Instead, you provide the names and values manually. <br /><br />
-	NOTE: The HTML options disabled, readonly, and multiple can all be treated as booleans. So specifying disabled: true will give disabled="disabled".
-	<%= link_to "Form_tag Help", "http://guides.rubyonrails.org/form_helpers.html", target: "_blank" %>
+	provides a number of methods for creating form tags that don't rely on an <span class="mark-1"> active record object assigned to the template like formhelper does </span>. instead, you provide the names and values manually. <br /><br />
+	note: the html options disabled, readonly, and multiple can all be treated as booleans. so specifying disabled: true will give disabled="disabled".
+	<%= link_to "form_tag help", "http://guides.rubyonrails.org/form_helpers.html", target: "_blank" %>
 </p>
 
-<h5 class="title">01 Form tag with Emplty form</h5>
-	<%= form_tag do %>
-		<p>Empty Form</p>
-	<% end %>
+<h5 class="title">01 form tag with emplty form</h5>
+<%= form_tag do %>
+<p>empty form</p>
+<% end %>
 <br />
 
-<h5 class="title">02 Form tag with Action</h5>
-	<%= form_tag("/sample_page", method: "get") do %>
-		<p>Form with Action</p>
-	<% end %>
+<h5 class="title">02 form tag with action</h5>
+<%= form_tag("/sample_page", method: "get") do %>
+<p>form with action</p>
+<% end %>
 <br />
 
-<h5 class="title">03 Form with Helper Methods</h5>
-	<%= form_tag("/sample_page", method: "post") do %>
-	<% end %>
+<h5 class="title">03 form with helper methods</h5>
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<%= form_tag({ controller: "formbasics", action: "sample_page", method: "post" }, class: "form-horizontal") do %>
+
+			<!-- Column 01 -->
+			<div class="col-md-6 col-sm-12">
+				<div class="form-group">
+					<%= label_tag "Name", nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= text_field_tag "Name", nil, class: "form-control", placeholder: "Name" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= label_tag 'Family Name', nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= text_field_tag "Family_Name", nil, class: "form-control", placeholder: "Family Name" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= label_tag 'Date of Birth', nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= date_field_tag "Date_of_Birth", nil, class: "form-control", placeholder: "dd/mm/yyyy" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= label_tag "Gender", nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<div class="radio">
+							<label class="radio-inline">
+								<%= radio_button_tag "Gender", "Male", true %> Male
+							</label>
+							<label class="radio-inline">
+								<%= radio_button_tag "Gender", "Female" %> Female
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Column 01 -->
+			<div class="col-md-6 col-sm-12">
+				<div class="form-group">
+					<%= label_tag "email", "Email", class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= email_field_tag "email", nil, class: "form-control", disabled: false, placeholder: "Email" %>
+					</div>
+				</div>
+			</div>
+			<% end %>
+		</div>
+	</div>
+</div>
 <br />
 
