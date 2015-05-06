@@ -13,8 +13,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: nathan04
+  username: nathantech
+  password: nathan@04
   host: localhost
   port: 3306
 

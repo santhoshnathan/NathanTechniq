@@ -1,9 +1,9 @@
-<p class="desc-title">form_tag</p>
+<!-- <p class="desc-title">form_tag</p>
 <p class="description">
 	provides a number of methods for creating form tags that don't rely on an <span class="mark-1"> active record object assigned to the template like formhelper does </span>. instead, you provide the names and values manually. <br /><br />
 	note: the html options disabled, readonly, and multiple can all be treated as booleans. so specifying disabled: true will give disabled="disabled".
-	<%= link_to "form_tag help", "http://guides.rubyonrails.org/form_helpers.html", target: "_blank" %>
-</p>
+	<%# link_to "form_tag help", "http://guides.rubyonrails.org/form_helpers.html", target: "_blank" %>
+</p> -->
 
 <h5 class="title">01 form tag with emplty form</h5>
 <%= form_tag do %>
@@ -21,49 +21,97 @@
 <div class="panel panel-default">
 	<div class="panel-body">
 		<div class="row">
-			<%= form_tag({ controller: "formbasics", action: "sample_page", method: "post" }, class: "form-horizontal") do %>
+			<%= form_tag({ controller: "formbasics", action: "sample_page", method: "post" }, class: "form-horizontal set-form-style") do %>
 
 			<!-- Column 01 -->
 			<div class="col-md-6 col-sm-12">
-				<div class="form-group">
+				<div class="form-group form-group-sm">
 					<%= label_tag "Name", nil, class: "col-sm-4 control-label" %>
 					<div class="col-sm-8">
 						<%= text_field_tag "Name", nil, class: "form-control", placeholder: "Name" %>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group form-group-sm">
 					<%= label_tag 'Family Name', nil, class: "col-sm-4 control-label" %>
 					<div class="col-sm-8">
 						<%= text_field_tag "Family_Name", nil, class: "form-control", placeholder: "Family Name" %>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group form-group-sm">
 					<%= label_tag 'Date of Birth', nil, class: "col-sm-4 control-label" %>
 					<div class="col-sm-8">
 						<%= date_field_tag "Date_of_Birth", nil, class: "form-control", placeholder: "dd/mm/yyyy" %>
 					</div>
 				</div>
-				<div class="form-group">
+				<div class="form-group form-group-sm">
 					<%= label_tag "Gender", nil, class: "col-sm-4 control-label" %>
 					<div class="col-sm-8">
-						<div class="radio">
-							<label class="radio-inline">
-								<%= radio_button_tag "Gender", "Male", true %> Male
-							</label>
-							<label class="radio-inline">
-								<%= radio_button_tag "Gender", "Female" %> Female
-							</label>
-						</div>
+						<label class="radio-inline">
+							<%= radio_button_tag "Gender", "Male", true %> Male
+						</label>
+						<label class="radio-inline">
+							<%= radio_button_tag "Gender", "Female" %> Female
+						</label>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<%= label_tag 'Permanent Address', nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= text_area_tag "Permanent_Address", nil, rows:3, class: "form-control", placeholder: "Permanent Address" %>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<%= label_tag 'Present Address', nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= text_area_tag "Present_Address", nil, rows:3, class: "form-control", placeholder: "Present Address" %>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<%= label_tag 'Course', nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%# select_tag "Course", options_from_collection_for_select(@course, "id", "name") %>
+						<%# @course.each do |s| %><%# end %>
 					</div>
 				</div>
 			</div>
 
-			<!-- Column 01 -->
+			<!-- Column 02 -->
 			<div class="col-md-6 col-sm-12">
-				<div class="form-group">
+				<div class="form-group form-group-sm">
 					<%= label_tag "email", "Email", class: "col-sm-4 control-label" %>
 					<div class="col-sm-8">
 						<%= email_field_tag "email", nil, class: "form-control", disabled: false, placeholder: "Email" %>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<%= label_tag 'Username', nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= text_field_tag "Username", nil, class: "form-control", placeholder: "Username" %>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<%= label_tag 'Password', nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<%= password_field_tag "Password", nil, class: "form-control", placeholder: "Password" %>
+					</div>
+				</div>
+				<div class="form-group form-group-sm">
+					<%= label_tag "Known Languages", nil, class: "col-sm-4 control-label" %>
+					<div class="col-sm-8">
+						<div class="checkbox">
+							<label class="checkbox">
+								<%= check_box_tag "English", "English" %> English
+							</label>
+							<label class="checkbox">
+								<%= check_box_tag "Tamil", "Tamil" %> Tamil
+							</label>
+							<label class="checkbox">
+								<%= check_box_tag "Hindi", "Hindi" %> Hindi
+							</label>
+							<label class="checkbox">
+								<%= check_box_tag "Japanese", "Japanese" %> Japanese
+							</label>
+						</div>
 					</div>
 				</div>
 			</div>
